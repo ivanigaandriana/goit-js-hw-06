@@ -1,5 +1,14 @@
-const refs ={
-    input : document.querySelector(`#name-input`),
-    span : document.querySelector(`#name-output`)
+
+const myInput = document.querySelector('#name-input' );
+const mySpan = document.querySelector('#name-output');
+
+myInput.addEventListener('input', newInput);
+
+function newInput(e) {
+   
+    mySpan.textContent = e.currentTarget.value;
+
+    if (e.currentTarget.value === "") {
+        mySpan.textContent = 'Anonymous'
+    }
 }
-refs.input.addEventListener('input', (event) => { !event.currentTarget.value ? refs.span.textContent = 'незнайомець' : refs.span.textContent = event.currentTarget.value })
